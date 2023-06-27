@@ -1,0 +1,35 @@
+.welcome {
+  background-image:   url(https://klike.net/uploads/posts/2019-06/medium/1561011184_2.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 300px;
+  background-color: blue;
+  background-size: cover;
+  
+  text-align: center;
+  color: white;
+  padding: 100px 20px;
+  box-sizing: border-box;
+  
+  position: relative; /*для добавления полупрозрачного фона позиция и псевдоэлемент before*/
+}
+
+.welcome::before {
+  content: '';
+  display: block;
+  
+  position: absolute;
+  background-color: black;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  
+  opacity: 0.6; /*задает прозрачность фона, значения от 0 до 1, 0 - прозрачный, 1 - совсем нет*/
+  z-index: 1; /*управляет положением элемента на оси Z, т.е. очередность наложения, не работает с position: static которрое по умолчанию*/
+}
+
+.welcome-title {
+  position: relative;
+  z-index: 3;
+}
